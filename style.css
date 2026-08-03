@@ -1,3 +1,7 @@
+body {
+     background-color: rgb(10, 1, 19);
+}
+
 #page1 {
      height: 95vh;
      width: 98vw;
@@ -142,4 +146,22 @@ whatsapp-btn {
 
 @keyframes vibrate {
      from {}
+}
+
+#tiktok {
+     width: 3%;
+     display: flex;
+     justify-content: end;
+     align-items: end;
+     border-radius: 50%;
+     transition: all 0.3s ease;
+     background-color: rgb(245, 242, 245);
+}
+
+#page2content {
+     color: white;
+     display: block;
+     align-items: center;
+     height: 40vh;
+     background-color: rgb(0, 0, 0);
 }
