@@ -105,3 +105,41 @@
      width: 30px;
      object-fit: contain;
 }
+
+.whatsapp_float {
+
+     width: 20%;
+     height: 40%;
+     display: flex;
+     justify-content: end;
+     align-items: end;
+     border-radius: 50%;
+     transition: all 0.3s ease;
+}
+
+.whatsapp_float:hover {
+
+     transform: scale(1.5);
+
+}
+
+.whatsapp_float img {
+     width: 30%;
+     height: 30%;
+}
+
+.whatsapp_float i {
+     color: white;
+     font-size: 30px;
+}
+
+whatsapp-btn {
+     position: fixed;
+     bottom: 20px;
+     right: 20px;
+     z-index: 9999;
+}
+
+@keyframes vibrate {
+     from {}
+}
