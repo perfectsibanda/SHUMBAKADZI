@@ -95,8 +95,13 @@
      width: 100vw;
      background-color: beige;
 }
-@keyframes wallpaper-slide{
-     0%{
-          
-     }
+
+@keyframes wallpaper-slide {
+     0% {}
+}
+
+#shopicon {
+     height: 30px;
+     width: 30px;
+     object-fit: contain;
 }
