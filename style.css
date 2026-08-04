@@ -35,7 +35,7 @@ body {
      mask-composite: intersect;
      height: 80%;
      width: 100%;
-     object-fit: cover;
+     object-fit: contain;
 }
 
 #logotab {
@@ -69,8 +69,8 @@ body {
      justify-content: center;
      align-items: center;
      text-decoration: none;
-     height: 75px;
-     width: 150px;
+     height: 30%;
+     width: 40%;
      transition: height 0.2s ease, width 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
 }
 
