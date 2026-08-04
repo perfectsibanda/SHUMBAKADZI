@@ -1,14 +1,16 @@
 body {
+     margin: 0;
      background-color: rgb(10, 1, 19);
 }
 
 #page1 {
      height: 95vh;
-     width: 98vw;
+     width: 100%;
      overflow: hidden;
      display: flex;
-     background: linear-gradient(70deg, rgb(44, 3, 91)0%, rgb(36, 25, 70), rgba(37, 18, 42, 0.8) 100%);
+     background: linear-gradient(70deg, rgb(44, 3, 91) 0%, rgb(36, 25, 70), rgba(37, 18, 42, 0.8) 100%);
      border: 2px solid black;
+     box-sizing: border-box;
      position: relative;
      backdrop-filter: blur(10px);
 }
@@ -17,65 +19,73 @@ body {
      display: block;
      height: 100%;
      width: 55%;
+}
 
+#wallpapertab img {
+     height: 100%;
+     width: 100%;
+     object-fit: cover;
 }
 
 #logotab {
      margin-right: 20px;
-     height: 100%;
-     width: 50%;
-
+     height: 70%;
+     width: 45%;
 }
 
 #logo {
-
      animation: float 2s alternate 3s infinite;
      height: 50%;
      width: 100%;
      object-fit: contain;
      border-bottom: 0.5px solid rgb(192, 170, 232);
-
 }
 
 .TABS {
      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
      color: antiquewhite;
-     Background: rgba(255, 255, 255, 0.08);
-     Border: 1px solid rgba(255, 255, 255, 0.15);
+     background: rgba(255, 255, 255, 0.08);
+     border: 1px solid rgba(255, 255, 255, 0.15);
      animation: shiny-border 0.5s alternate infinite;
-     Border-radius: 10px;
+     border-radius: 10px;
      backdrop-filter: blur(10px);
      text-align: center;
+     display: flex;
+     flex-direction: column;
      justify-content: center;
-     height: 70px;
+     align-items: center;
+     text-decoration: none;
+     height: 75px;
      width: 150px;
+     transition: height 0.2s ease, width 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.TABS svg {
+     fill: antiquewhite;
 }
 
 .TABS:hover {
      color: rgb(146, 133, 180);
-     background: (rgba(255, 255, 255, 0.15));
+     background: rgba(255, 255, 255, 0.15);
      box-shadow: 0 4px 25px rgb(192, 170, 232);
      height: 100px;
      width: 190px;
 }
 
+.TABS:hover svg {
+     fill: rgb(146, 133, 180);
+}
+
 #TABS {
      display: flex;
      flex-direction: column;
-
      align-items: center;
-
+     gap: 20px;
+     height: 100%;
+     justify-content: center;
 }
 
 @keyframes float {
-     from {
-          transform: translate(0px, 10px);
-     }
-}
-
-
-
-@-webkit-keyframes float {
      from {
           transform: translate(0px, 10px);
      }
@@ -91,102 +101,148 @@ body {
           border-bottom: 1px solid rgb(208, 0, 255);
           border-right: 1px solid rgb(31, 22, 42);
      }
-
 }
 
-#contactspage {
-     height: 60vh;
-     width: 100vw;
-     background-color: beige;
-}
-
-@keyframes wallpaper-slide {
-     0% {}
-}
-
-#shopicon {
-     height: 30px;
-     width: 30px;
-     object-fit: contain;
+#whatsappiconspace {
+     position: fixed;
+     bottom: 24px;
+     right: 24px;
+     z-index: 999;
+     border-radius: 27px;
+     animation: zoom 5s ease-in-out infinite;
 }
 
 .whatsapp_float {
-
-     width: 20%;
-     height: 40%;
      display: flex;
-     justify-content: end;
-     align-items: end;
+     width: 60px;
+     height: 60px;
      border-radius: 50%;
-     transition: all 0.3s ease;
+     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+     transition: transform 0.3s ease;
 }
 
 .whatsapp_float:hover {
-
-     transform: scale(1.5);
-
+     transform: scale(1.1);
 }
 
-.whatsapp_float img {
-     width: 30%;
-     height: 30%;
-}
-
-.whatsapp_float i {
-     color: white;
-     font-size: 30px;
-}
-
-whatsapp-btn {
-     position: fixed;
-     bottom: 20px;
-     right: 20px;
-     z-index: 9999;
-}
-
-@keyframes vibrate {
-     from {}
+.whatsapp_float svg {
+     width: 100%;
+     height: 100%;
 }
 
 #icons {
      gap: 25px;
-     width: 50%;
-     height: 10%;
+     width: 100%;
+     max-width: 300px;
+     height: 60px;
      display: flex;
      justify-content: center;
      align-items: center;
-
+     margin: 20px auto 0;
      transition: all 0.3s ease;
      background-color: rgb(184, 192, 206);
-}
-
-#page2content {
-     padding-right: 50px;
-     padding-left: 50px;
-     padding-top: 50px;
-     color: white;
-     display: block;
-     align-items: center;
-     height: 40vh;
-     background: linear-gradient(180deg, rgb(38, 15, 63)0%, rgb(36, 19, 88), rgba(43, 29, 47, 0.8) 100%);
-}
-
-.center {
-     font-family: inter, sans-serif;
-     display: flex;
-     justify-content: center;
-     align-items: center;
+     border-radius: 10px;
 }
 
 .singular {
-     width: 5%;
+     display: flex;
+     width: 28px;
+     height: 28px;
+}
+
+.singular svg {
+     width: 100%;
+     height: 100%;
+     fill: rgb(36, 19, 88);
+}
+
+#page2content {
+     padding: 5px;
+     color: white;
+     text-align: center;
+     background: linear-gradient(180deg, rgb(81, 97, 169) 0%, rgb(36, 19, 88), rgba(43, 29, 47, 0.8) 100%);
+}
+
+.center {
+     font-family: Inter, sans-serif;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     max-width: 700px;
+     margin: 0 auto;
+     line-height: 1.6;
 }
 
 .title {
      font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
      display: flex;
      justify-content: center;
-     color: linear-gradient(90deg, rgb(82, 30, 73)0%, rgb(255, 255, 255), rgba(255, 255, 255, 0.8) 100%);
      align-items: center;
      font-size: 40px;
+     margin: 0 0 20px;
+     background: linear-gradient(90deg, rgb(192, 170, 232) 0%, rgb(255, 255, 255) 60%, rgba(255, 255, 255, 0.8) 100%);
+     -webkit-background-clip: text;
+     background-clip: text;
+     color: transparent;
+}
+
+#contactspage {
+     padding: 30px 20px;
+     text-align: center;
+     color: rgb(36, 19, 88);
+     background-color: beige;
+     font-family: Inter, sans-serif;
+}
+
+#contactspage a {
+     color: rgb(36, 19, 88);
+     font-weight: bold;
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+     #logo,
+     .TABS {
+          animation: none;
+     }
+}
+
+@media (max-width: 768px) {
+     #page1 {
+          flex-direction: column;
+          height: auto;
+          min-height: auto;
+     }
+
+     #wallpapertab {
+          width: 100%;
+          height: 220px;
+     }
+
+     #logotab {
+          width: 100%;
+          margin-right: 0;
+          padding: 20px 0 40px;
+     }
+
+     #logo {
+          height: 120px;
+          border-bottom: none;
+     }
+
+     .title {
+          font-size: 28px;
+     }
+}
+
+@keyframes zoom {
+     0% {
+          transform: scale(1.0);
+     }
+
+     50% {
+          transform: scale(1.5);
+     }
+
+
 }
