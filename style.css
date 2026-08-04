@@ -19,10 +19,21 @@ body {
      display: block;
      height: 100%;
      width: 55%;
+
 }
 
 #wallpapertab img {
-     height: 100%;
+     mask-image:
+          linear-gradient(to right, black 40%, transparent 100%),
+
+          linear-gradient(to left, black 100%, transparent 100%),
+
+          linear-gradient(to top, black 95%, transparent 100%),
+
+          linear-gradient(to bottom, black 90%, transparent 100%);
+
+     mask-composite: intersect;
+     height: 80%;
      width: 100%;
      object-fit: cover;
 }
@@ -34,6 +45,9 @@ body {
 }
 
 #logo {
+     mask-image: linear-gradient(to left, rgb(0, 0, 0) 80%, transparent 100%), linear-gradient(to right, rgb(0, 0, 0) 80%, transparent 100%);
+     mask-composite: intersect;
+
      animation: float 2s alternate 3s infinite;
      height: 50%;
      width: 100%;
@@ -115,7 +129,7 @@ body {
 .whatsapp_float {
      display: flex;
      width: 60px;
-     height: 60px;
+     height: 50px;
      border-radius: 50%;
      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
      transition: transform 0.3s ease;
