@@ -123,7 +123,7 @@ body {
      right: 24px;
      z-index: 999;
      border-radius: 27px;
-     animation: zoom 5s ease-in-out infinite;
+     animation: zoom 2s ease-in-out infinite;
 }
 
 .whatsapp_float {
@@ -255,7 +255,7 @@ body {
      }
 
      50% {
-          transform: scale(1.5);
+          transform: scale(1.1);
      }
 
 
