@@ -9,6 +9,10 @@ the home page will contain simple thngs
 1. an image slider 
 2. a logo with a header
 3. a view sales (tanga ) button for te customer to view the items in the shop
+4. hovering whatsapp logo 
+5. a small informative tab
+6. a tab with links to the clients tiktok and other accounts
+
 
 sales page will contain 
 
