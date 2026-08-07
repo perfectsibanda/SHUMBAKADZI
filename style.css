@@ -291,10 +291,35 @@ body {
           margin-right: 0;
           padding: 20px 0 40px;
      }
+}
 
-     #logo {
-          height: 120px;
-          border-bottom: none;
+#logo {
+     height: 120px;
+     border-bottom: none;
+     /* 1. Hide the logo initially */
+
+     opacity: 0;
+     transition: opacity 0.3s ease;
+
+
+     /* 2. Define the drop animation */
+     @keyframes dropIn {
+          0% {
+               transform: translateY(-50px);
+               /* Start 50px higher */
+               opacity: 0;
+          }
+
+          100% {
+               transform: translateY(0);
+               opacity: 1;
+          }
+     }
+
+     /* 3. The class that triggers the animation */
+     .logo-animate {
+          animation: dropIn 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+
      }
 
      .title {
