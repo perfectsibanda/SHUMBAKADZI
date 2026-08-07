@@ -137,6 +137,8 @@
             card.classList.remove('is-center', 'is-left', 'is-right', 'is-hidden');
             if (i === centerIndex) {
               card.classList.add('is-center');
+              card.setAttribute('fetchpriority', 'high');
+              card.setAttribute('loading', 'eager');
             } else if (i === (centerIndex + 1) % total) {
               card.classList.add('is-right');
             } else if (i === (centerIndex - 1 + total) % total) {
