@@ -34,13 +34,12 @@ body {
 }
 
 #wallpapertab,
-#page1 {
-     overflow: visible !important;
-}
+#page1 {}
 
 @media (max-width: 768px) {
      #cardStack {
           width: 90%;
+          height: 200px;
           /* Take up more space on mobile */
      }
 }
@@ -100,7 +99,7 @@ body {
      mask-composite: intersect;
 
      animation: float 2s alternate 3s infinite;
-     height: 50%;
+     height: 15%;
      width: 100%;
      object-fit: contain;
      border-bottom: 0.5px solid rgb(192, 170, 232);
