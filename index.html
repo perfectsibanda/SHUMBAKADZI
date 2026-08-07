@@ -155,6 +155,24 @@
           render();
         }, 3000);
       })();
+      const images = document.querySelectorAll('.stack-card');
+      let loadedCount = 0;
+
+      images.forEach(img => {
+        if (img.complete) {
+          checkCount();
+        } else {
+          img.addEventListener('load', checkCount);
+        }
+      });
+
+      function checkCount() {
+        loadedCount++;
+        if (loadedCount >= 3) {
+          // Start wallpaper animation sequence
+          document.querySelector('.wallpaper-container').classList.add('start-animation');
+        }
+      }
     </script>
 </body>
 
