@@ -4,12 +4,12 @@ body {
 }
 
 #page1 {
-     height: 97vh;
+     height: 99vh;
      width: 100%;
      overflow: hidden;
      display: flex;
-     background: linear-gradient(70deg, rgb(44, 3, 91) 0%, rgb(36, 25, 70), rgba(37, 18, 42, 0.8) 100%);
-     border: 2px solid black;
+     background: linear-gradient(70deg, rgba(32, 14, 55, 0.261) 0%, rgba(50, 45, 68, 0.831), rgba(100, 93, 105, 0.546) 100%);
+     background-attachment: fixed;
      box-sizing: border-box;
      position: relative;
      backdrop-filter: blur(10px);
@@ -18,14 +18,78 @@ body {
 #wallpapertab {
      position: relative;
      display: flex;
+     justify-content: center;
+     align-items: center;
      height: 100%;
      width: 55%;
      margin: 0;
+     overflow: hidden;
+}
 
+.card-stack {
+     position: relative;
+     width: 50%;
+     height: 70%;
+     perspective: 1000px;
+}
 
+#wallpapertab,
+#page1 {
+     overflow: visible !important;
+}
+
+@media (max-width: 768px) {
+     #cardStack {
+          width: 90%;
+          /* Take up more space on mobile */
+     }
+}
+
+.stack-card {
+     position: absolute;
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 100%;
+     object-fit: contain;
+     border-radius: 12px;
+     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+     transition: transform 0.8s ease, opacity 0.8s ease, filter 0.8s ease;
+     opacity: 0;
+     transform: scale(0.7);
+     perspective: 1500px;
+     z-index: 1;
+}
+
+.stack-card.is-center {
+     opacity: 1;
+     transform: translateX(0) rotateY(0deg) scale(1);
+     z-index: 3;
+     filter: none;
+}
+
+.stack-card.is-left {
+     opacity: 0.55;
+     transform: translateX(-55%) rotateY(25deg) scale(0.8);
+     z-index: 2;
+     filter: brightness(0.7);
+}
+
+.stack-card.is-right {
+     opacity: 0.55;
+     transform: translateX(55%) rotateY(-25deg) scale(0.8);
+     z-index: 2;
+     filter: brightness(0.7);
+}
+
+.stack-card.is-hidden {
+     opacity: 0;
+     transform: scale(0.6);
+     z-index: 1;
 }
 
 #logotab {
+     border-color: rgba(193, 95, 210, 0.854);
      margin-right: 20px;
      height: 70%;
      width: 45%;
@@ -105,12 +169,13 @@ body {
 }
 
 #whatsappiconspace {
-     position: fixed;
+     position: fixed !important;
      bottom: 24px;
      right: 24px;
-     z-index: 999;
+     z-index: 1000;
      border-radius: 27px;
      animation: zoom 2s ease-in-out infinite;
+     pointer-events: auto;
 }
 
 .whatsapp_float {
@@ -158,10 +223,11 @@ body {
 }
 
 #page2content {
-     padding: 5px;
+     padding: 30px 20px;
      color: white;
      text-align: center;
-     background: linear-gradient(180deg, rgb(81, 97, 169) 0%, rgb(36, 19, 88), rgba(43, 29, 47, 0.8) 100%);
+     background: linear-gradient(70deg, rgba(32, 14, 55, 0.261) 0%, rgba(50, 45, 68, 0.831), rgba(100, 93, 105, 0.546) 100%);
+     background-attachment: fixed;
 }
 
 .center {

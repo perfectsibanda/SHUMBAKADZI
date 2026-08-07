@@ -20,14 +20,20 @@
   <header id="page1">
 
     <div id="wallpapertab">
-
+      <div class="card-stack" id="cardStack">
+        <img class="stack-card" src="whitegarment.jpeg" alt="">
+        <img class="stack-card" src="baag.jpeg" alt="">
+        <img class="stack-card" src="kidgarment.jpeg" alt="">
+        <img class="stack-card" src="custombag.jpeg" alt="">
+        <img class="stack-card" src="shirts.jpeg" alt="">
+      </div>
     </div>
 
     <div id="logotab">
       <img id="logo" src="shumbakadzilogo.png" alt="Shumbakadzi Sales logo">
 
       <nav id="TABS" aria-label="Product categories">
-        <a class="TABS" href="https://wa.me/263773739278?text=Hello%2C%20I%27d%20like%20to%20order%20church%20products">
+        <a class="TABS" href="church store.html">
           <svg xmlns="http://www.w3.org/2000/svg" width="15px" height="15px" viewBox="0 0 15 15" aria-hidden="true">
             <path d="M13.33,6H11.5l-0.39-2.33c-0.1601-0.7182-0.7017-1.2905-1.41-1.49C9.3507,2.0676,8.9869,2.007,8.62,2H6.38
                       C6.0131,2.007,5.6493,2.0676,5.3,2.18C4.5917,2.3795,4.0501,2.9518,3.89,3.67L3.5,6H1.67C1.3939,5.9983,1.1687,6.2208,1.167,6.497
@@ -40,7 +46,7 @@
           Purchase church products
         </a>
 
-        <a class="TABS" href="https://wa.me/263773739278?text=Hello%2C%20I%27d%20like%20to%20order%20personal%20items">
+        <a class="TABS" href="personal store .html">
 
           <svg xmlns="http://www.w3.org/2000/svg" width="15px" height="15px" viewBox="0 0 15 15" aria-hidden="true">
             <path d="M13.33,6H11.5l-0.39-2.33c-0.1601-0.7182-0.7017-1.2905-1.41-1.49C9.3507,2.0676,8.9869,2.007,8.62,2H6.38
@@ -119,16 +125,35 @@
         </g>
       </svg>
     </a>
-    <div class="carousel">
-      <div class="group">
-        <div class="card">1</div>
-        <div class="card">2</div>
-        <div class="card">3</div>
-        <div class="card">4</div>
-        <div class="card">5</div>
-        <div class="card">6</div>
-      </div>
-    </div>
+    <script>
+      (function () {
+        const cards = document.querySelectorAll('#cardStack .stack-card');
+        if (!cards.length) return;
+        let centerIndex = 0;
+
+        function render() {
+          const total = cards.length;
+          cards.forEach((card, i) => {
+            card.classList.remove('is-center', 'is-left', 'is-right', 'is-hidden');
+            if (i === centerIndex) {
+              card.classList.add('is-center');
+            } else if (i === (centerIndex + 1) % total) {
+              card.classList.add('is-right');
+            } else if (i === (centerIndex - 1 + total) % total) {
+              card.classList.add('is-left');
+            } else {
+              card.classList.add('is-hidden');
+            }
+          });
+        }
+
+        render();
+        setInterval(() => {
+          centerIndex = (centerIndex + 1) % cards.length;
+          render();
+        }, 3000);
+      })();
+    </script>
 </body>
 
 </html>
